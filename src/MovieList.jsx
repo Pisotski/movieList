@@ -1,10 +1,11 @@
 import React, { Component} from "react";
 import MovieListEntry from "./MovieListEntry"
 
-var MovieList = function() {
+var MovieList = function(props) {
+  console.log(props.movies)
     return (
     <div>MovieList
-    <MovieListEntry />
+    {props.movies.map((movie, index) => <MovieListEntry key={index} movie= {movie}/>)}    
     </div>
   )
   //append each movie to the movieList and pass each movie to the props of MovieListEntry

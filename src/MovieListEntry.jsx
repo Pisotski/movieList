@@ -1,13 +1,10 @@
 import React, { Component} from "react";
 
 //create template for single movie in the list
-var MovieListEntry = () => {
+var MovieListEntry = (props) => {
   return (
-  <div><ul><h4>Movie 1</h4></ul>
-  <ul><h4>Movie 2</h4></ul>
-  <ul><h4>Movie 3</h4></ul>
-  <ul><h4>Movie 4</h4></ul>
-  <ul><h4>Movie 5</h4></ul></div>
+  <div><ul><h4>{props.movie.title}</h4></ul>
+</div>
   )
 };
 
