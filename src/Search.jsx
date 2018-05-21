@@ -1,13 +1,13 @@
 import React, { Component} from "react";
 
 var Search = function(props) {
-  console.log(props);
+  // console.log(props);
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form>
       <label>
-        <input onChange={props.handleChange} className="form" type="text" placeholder="Search.."></input>
-        <button>Search</button>
+        <input className="form" type="text" onChange={props.handleChange} placeholder="Search..."></input>
       </label>
+      <input type="submit" value="Search"></input>
     </form>
   )
 }

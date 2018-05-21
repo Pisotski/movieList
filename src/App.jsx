@@ -14,36 +14,29 @@ class App extends React.Component{
       currentMovieList: collection
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  isMovieOnTheList(val) {
-    let obj = this.state.collection;
-    for (let key in obj) {
-      if (obj[key] === value) {
-        alert('hooray we got your movie');
-      } else {
-        alert('bad news');
-      }
-    }
-
-  }
 
   handleChange(event) {
+    var filteredMovieList = this.state.currentMovieList.filter((movie) => 
+      movie.title.includes(event.target.value)
+      )
     this.setState({value: event.target.value})
   }
 
-  handleSubmit(event) {
-    isMovieOnTheList(event.target.value);
-    event.preventDefault();
-  }
+  // handleSubmit(event) {
+  //   console.log(event.target.value);
+
+  // }
 
   render() {
     return(
       <div className="App">
         <Search handleSubmit = {this.handleSubmit} handleChange = {this.handleChange}/>
+        <div>{this.state.value}</div>
         <h2>MovieList</h2>
-        <MovieList movies= {collection}/>
+        <MovieList movies= {collection} val= {this.state.value}/>
       </div>
     );
   }
