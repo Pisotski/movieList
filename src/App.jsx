@@ -19,10 +19,8 @@ class App extends React.Component{
 
 
   handleChange(event) {
-    var filteredMovieList = this.state.currentMovieList.filter((movie) => 
-      movie.title.includes(event.target.value)
-      )
-    this.setState({value: event.target.value})
+    var lowVal = event.target.value.toLowerCase();
+    this.setState({value: lowVal})
   }
 
   // handleSubmit(event) {

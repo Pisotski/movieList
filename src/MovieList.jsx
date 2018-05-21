@@ -7,7 +7,7 @@ var MovieList = function(props) {
     <table>
       <tbody>
         {props.movies
-          .filter((movie) => movie.title.includes(props.val))
+          .filter((movie) => movie.title.toLowerCase().includes(props.val))
           .map((movie, index) => <tr key= {index}><MovieListEntry movie= {movie} index= {index}/></tr>)} 
       </tbody>  
     </table>
