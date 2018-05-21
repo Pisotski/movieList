@@ -1,7 +1,6 @@
 import React, { Component} from "react";
 import "./App.css";
 import collection from "./fakeData"
-import AddMovieTitle from "./AddMovieTitle"
 import MovieList from "./MovieList"
 import Search from "./Search"
 
@@ -28,13 +27,14 @@ class App extends React.Component{
 
   addMovie(event) {
     event.preventDefault();
-    console.log(this.state.collection);
-    let title = this.state.newMovieTitle;
+    console.log('input is', this.refs.newTitle.value);
+    let title = this.refs.newTitle.value;
     if(title.length > 0) {
       this.setState({
         collection: this.state.collection.concat({title})
       })
     };
+    this.refs.newTitle.value = '';
   }
 
   handleMovieAdd(event) {
@@ -44,7 +44,10 @@ class App extends React.Component{
   render() {
     return(
       <div className="App">
-        <AddMovieTitle addMovie={this.addMovie} handleMovieAdd={this.handleMovieAdd}/>
+        <form onSubmit={this.addMovie}>
+        <input className="form" type="text" ref="newTitle" placeholder="Add movie title here"></input>
+        <button type="submit">Add new Movie</button>
+        </form>
         <Search handleChange={this.handleChange}/>
         <div>{this.state.value}</div>
         <h2>MovieList</h2>
@@ -57,3 +60,13 @@ class App extends React.Component{
 export default App;
 
 window.App = App;
+
+
+
+
+
+
+
+
+
+

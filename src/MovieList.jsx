@@ -4,13 +4,11 @@ import MovieListEntry from "./MovieListEntry"
 var MovieList = function(props) {
   console.log(props)
     return (
-    <table>
-      <tbody>
-        {props.movies
-          .filter((movie) => movie.title.toLowerCase().includes(props.val))
-          .map((movie, index) => <tr key= {index}><MovieListEntry movie= {movie} index= {index}/></tr>)} 
-      </tbody>  
-    </table>
+    <div>
+      {props.movies
+        .filter((movie) => movie.title.toLowerCase().includes(props.val))
+        .map((movie, index) => <ul key= {index}><MovieListEntry movie= {movie} index= {index}/><span><button className="watched">watched</button></span></ul>)} 
+    </div>
   )
 }
 
