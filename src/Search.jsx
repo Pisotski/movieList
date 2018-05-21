@@ -1,7 +1,6 @@
 import React, { Component} from "react";
 
 var Search = function(props) {
-  // console.log(props);
   return (
     <form>
       <label>

@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import MovieListEntry from "./MovieListEntry"
 
 var MovieList = function(props) {
-  console.log(props)
+  // console.log(props)
     return (
     <table>
       <tbody>
