@@ -23,7 +23,7 @@ class App extends React.Component{
 
   handleChange(event) {
     var lowVal = event.target.value.toLowerCase();
-    this.setState({collection: lowVal});
+    this.setState({value: lowVal});
   }
 
   addMovie(event) {
